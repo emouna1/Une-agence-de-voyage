@@ -1,0 +1,48 @@
+<!DOCTYPE html >
+<html><head>
+  <meta charset="utf-8">
+  <style>
+    .card-img-top {
+      max-width: 3000%;
+      max-height: 500px;
+    }
+  </style>
+  <style>
+      .card-deck {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .card {
+        flex: 1;
+        margin-right: 15px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mb-3">
+        <p>Welcome to our traveloooooo!  we are here to make your travel dreams come true. Let us be your guide and start planning your next adventure today!</p>
+      </div>
+      <div class="container">
+        <div class="row">
+          <input type="text" [(ngModel)]="searchTerm">
+                <button class="btn btn-primary text-center" (click)="search()">Search</button>
+
+          </div>
+      <div class="row">
+        <div class="col-md-6 mb-4" *ngFor="let hotel of hotels; let i = index;">
+          <div class="card">
+            <img class="card-img-top" [src]="hotel.image" alt="{{ hotel.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ hotel.name }}</h5>
+              <p class="card-text">{{ hotel.description }}</p>
+              <p class="card-text"><span class="badge bg-success">Price per night:</span> {{ hotel.prixNuit }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </body>
+</html>
